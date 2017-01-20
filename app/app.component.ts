@@ -6,18 +6,8 @@ import { Meal } from './meal.model';
   template: `
   <div class="container">
     <h1>Meal List</h1>
-   <ul>
-     <li *ngFor="let meal of meals">Name: {{meal.name}}, Details: {{meal.details}}, Calories: {{meal.calories}} <br><button (click)="editMeal(meal)">Edit!</button><br></li>
-   </ul>
-   <div *ngIf="selectedMeal">
-      <label>Meal Name:</label><br>
-      <input [(ngModel)]="selectedMeal.name"><br>
-      <label>Meal Type:</label><br>
-      <input [(ngModel)]="selectedMeal.details"><br>
-      <label>Calories:</label><br>
-      <input [(ngModel)]="selectedMeal.calories"><br>
-      <button (click)="finishedEditing()">Done</button>
-    </div>
+    <meal-list [childMealList]="meals" (editClickSender)="editMeal($event)"></meal-list>
+    <edit-meal [childSelectedMeal]="selectedMeal" (clickSender)="finishedEditing()"></edit-meal>
     <new-meal [newMealForm]="newMealForm" (newMealSender)="addMeal($event)" (newMealFormSender)="showMealForm()"></new-meal>
   </div>
   `
