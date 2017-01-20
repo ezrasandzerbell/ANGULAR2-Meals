@@ -1,23 +1,137 @@
+$LOBSTER: #fc8860;
+
+body {
+  background-color: #fffaf0;
+}
 .noBullets {
   list-style-type: none;
 }
 
 .nav-wrapper{
-  background-color: #fc8860;
+  background-color: $LOBSTER;
+  height:50px;
+  margin-top: 0;
   .headerTitle {
+    padding-top: 5px;
     font-family: 'Lobster', cursive;
     text-align: center;
   }
 }
 
-ul {
-  .btn {
-      background-color: #fc8860;
-    height: 24px;
-    line-height: 24px;
-    padding: 0 0.5rem;
+.mealList {
+  font-family: 'Bungee Shade', cursive;
+  color: $LOBSTER;
+  text-align:center;
+  font-size: 60px;
+}
+
+.selectBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  .selectWidth{
+    width: 400px;
+    text-align: center;
+    margin-bottom: 15px;
   }
-  .btn:hover {
-      background-color: #fce55f;
+}
+
+.leftDiv, .rightDiv {
+
+  margin-top: 3%;
+  padding-bottom: 3%;
+}
+
+.addMeal {
+  border-style: solid;
+  border-width: thin;
+  border-color: $LOBSTER;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 1%;
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.rightDiv {
+  padding-top: 3%;
+  height: 90%;
+  border-style: solid;
+  border-width: thin;
+  border-color: $LOBSTER;
+
+  .mealFormDivs {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      color: $LOBSTER;
+      font-family: 'Ubuntu', sans-serif;
+    }
+    .buttonStyle {
+        background-color: $LOBSTER;
+        height: 24px;
+        width: 150px;
+        line-height: 24px;
+        padding: 0 0.5rem;
+        color: white;
+
+      }
+    .buttonStyle:hover {
+      background-color: #ffcc99;
+    }
+    .formatMealForm {
+      h2 {
+        color: $LOBSTER;
+        font-family: 'Ubuntu', sans-serif;
+      }
+      .buttonStyle {
+          background-color: $LOBSTER;
+          height: 24px;
+          width: 150px;
+          line-height: 24px;
+          padding: 0 0.5rem;
+          color: white;
+
+        }
+      .buttonStyle:hover {
+        background-color: #ffcc99;
+      }
+    }
+  }
+}
+
+.mealForms {
+  font-family: 'Bungee Shade', cursive;
+  color: $LOBSTER;
+  text-align: center;
+  font-size: 40px;
+}
+
+.mealDiv {
+  border-width: thin;
+  border-style: solid;
+  border-color: black;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 1%;
+  background-color: #f5E3D7;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  .buttonStyle {
+      background-color: $LOBSTER;
+      height: 24px;
+      line-height: 24px;
+      padding: 0 0.5rem;
+      float: right;
+    }
+  .buttonStyle:hover {
+        background-color: #ffcc99;
   }
 }

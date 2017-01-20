@@ -4,17 +4,19 @@ import { Meal } from './meal.model';
 @Component ({
   selector: 'new-meal',
     template: `
-    <button *ngIf="!newMealForm" (click)="showMealForm()">Add New Meal</button>
-    <div *ngIf="newMealForm">
-      <h1>New Meal</h1>
-      <div>
-        <label>name: </label>
-        <input #name>
-        <label>details: </label>
-        <input #details>
-        <label>calories: </label>
-        <input #calories>
-        <button (click)="submitMeal(name.value, details.value, calories.value); name.value=''; details.value=''; calories.value='';">Submit</button>
+    <p class="mealForms">Meal Forms</p>
+    <div class="mealFormDivs"><button *ngIf="!newMealForm" (click)="showMealForm()" class="btn buttonStyle">Add A New Meal</button>
+      <div *ngIf="newMealForm" class="formatMealForm">
+        <h2>New Meal</h2>
+        <div>
+          <input #name placeholder="Food Name">
+          <br>
+          <input #details placeholder="Type of Meal">
+          <br>
+          <input #calories placeholder="Number of Calories">
+          <br>
+          <button (click)="submitMeal(name.value, details.value, calories.value); name.value=''; details.value=''; calories.value='';" class="btn buttonStyle">Submit</button>
+        </div>
       </div>
     </div>
     `
