@@ -6,13 +6,33 @@ import { Component } from '@angular/core';
   <div class="container">
     <h1>Meal List</h1>
    <ul>
-     <li *ngFor="let currentMeal of meals">{{currentMeal.description}}</li>
+     <li *ngFor="let meal of meals">Name: {{meal.name}}, Details: {{meal.details}}, Calories: {{meal.calories}} <br><button (click)="editMeal(meal)">Edit!</button><br></li>
    </ul>
+   <div *ngIf="selectedMeal">
+      <label>Meal Name:</label><br>
+      <input [(ngModel)]="selectedMeal.name"><br>
+      <label>Meal Type:</label><br>
+      <input [(ngModel)]="selectedMeal.details"><br>
+      <label>Calories:</label><br>
+      <input [(ngModel)]="selectedMeal.calories"><br>
+      <button (click)="finishedEditing()">Done</button>
+    </div>
   </div>
   `
 })
 
 export class AppComponent {
+
+  selectedMeal: Meal = null;
+
+     editMeal(clickedMeal) {
+       this.selectedMeal = clickedMeal;
+       console.log(clickedMeal);
+     }
+
+     finishedEditing() {
+       this.selectedMeal = null;
+     }
 
   meals: Meal[] = [
     new Meal('Toast', 'breakfast', 75),
