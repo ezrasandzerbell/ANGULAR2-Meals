@@ -10,10 +10,10 @@ _This app uses Angular JS to create a meal Tracker_
 
 ## Installation
 
-_1. $ npm install_
-_2. $ bower install_
-_3. $ gulp build
-_4. $ gulp serve_
+* `$ npm install`
+* `$ bower install`
+* `$ gulp build`
+* `$ gulp serve`
 
 ## Features
 
