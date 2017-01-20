@@ -14,7 +14,7 @@ import { Meal } from './meal.model';
         <input #details>
         <label>calories: </label>
         <input #calories>
-        <button (click)="submitMeal(name.value, details.value, calories.value); name.value=''; details.value=''; price.value=''; calories.value='';">Submit</button>
+        <button (click)="submitMeal(name.value, details.value, calories.value); name.value=''; details.value=''; calories.value='';">Submit</button>
       </div>
     </div>
     `
@@ -29,7 +29,7 @@ import { Meal } from './meal.model';
       var newMealToAdd: Meal = new Meal(name, details, calories);
       this.newMealSender.emit(newMealToAdd);
     }
-    
+
     showMealForm() {
       this.newMealFormSender.emit();
     }
