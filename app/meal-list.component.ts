@@ -11,7 +11,7 @@ import { Meal } from './meal.model';
   </select>
 
   <ul>
-    <li *ngFor="let meal of childMealList | filterPipe:calorieFilter">Name: {{meal.name}}, Details: {{meal.details}}, Calories: {{meal.calories}} <br><button (click)="editMeal(meal)">Edit!</button><br></li>
+    <li *ngFor="let meal of childMealList | filterPipe:calorieFilter">Name: {{meal.name}}, Details: {{meal.details}}, Calories: {{meal.calories}} <br><a class="waves-effect waves-light btn" (click)="editMeal(meal)">Edit</a></li>
   </ul>
   `
 })
