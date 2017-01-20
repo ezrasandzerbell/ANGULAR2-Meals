@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Meal } from './meal.model';
 
 @Component({
   selector: 'app-root',
@@ -45,10 +46,3 @@ export class AppComponent {
     new Meal('Fortune Cookie', 'dinner', 107)
   ];
 }
-//class declaration is our MODEL which is also data
-export class Meal {
-  constructor(public name: string, public details: string, public calories: number) { }
-}
-
-
-//TIP when a variable in a component's class declaration references another variable in the class, it must be prefaced with the this keyword.
