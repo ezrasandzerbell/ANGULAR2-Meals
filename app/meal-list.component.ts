@@ -4,8 +4,14 @@ import { Meal } from './meal.model';
 @Component({
   selector: 'meal-list',
   template: `
+  <select (change)="onChange($event.target.value)">
+    <option [value]="allCal"> All Meals </option>
+    <option [value]="lowCal"> Low Calorie </option>
+    <option [value]="highCal"> High Calorie </option>
+  </select>
+
   <ul>
-    <li *ngFor="let meal of childMealList">Name: {{meal.name}}, Details: {{meal.details}}, Calories: {{meal.calories}} <br><button (click)="editMeal(meal)">Edit!</button><br></li>
+    <li *ngFor="let meal of childMealList | filterPipe:calorieFilter">Name: {{meal.name}}, Details: {{meal.details}}, Calories: {{meal.calories}} <br><button (click)="editMeal(meal)">Edit!</button><br></li>
   </ul>
   `
 })
@@ -13,6 +19,12 @@ import { Meal } from './meal.model';
 export class MealListComponent {
   @Input() childMealList: Meal[];
   @Output() editClickSender = new EventEmitter();
+
+  calorieFilter: string = "allCal";
+
+  onChange(selection) {
+    this.calorieFilter = selection;
+  }
 
   editMeal(clickedMeal) {
     this.editClickSender.emit(clickedMeal);

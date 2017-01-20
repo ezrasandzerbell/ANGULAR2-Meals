@@ -5,6 +5,7 @@ import { MealListComponent } from './meal-list.component';
 import { FormsModule } from '@angular/forms';
 import { NewMealComponent } from './new-meal.component';
 import { EditMealComponent } from './edit-meal.component';
+import { FilterCaloriesPipe } from  './filter-calories.pipe';
 
 @NgModule({
   imports: [ BrowserModule,
@@ -12,7 +13,8 @@ import { EditMealComponent } from './edit-meal.component';
   declarations: [ AppComponent,
                   MealListComponent,
                   NewMealComponent,
-                  EditMealComponent
+                  EditMealComponent,
+                  FilterCaloriesPipe
                   ],
   bootstrap:    [ AppComponent ]
 })

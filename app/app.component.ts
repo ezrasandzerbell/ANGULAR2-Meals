@@ -18,23 +18,23 @@ export class AppComponent {
   selectedMeal: Meal = null;
   newMealForm: boolean = false;
 
-     editMeal(clickedMeal) {
-       this.selectedMeal = clickedMeal;
-       console.log(clickedMeal);
-     }
+   editMeal(clickedMeal) {
+     this.selectedMeal = clickedMeal;
+     console.log(clickedMeal);
+   }
 
-     finishedEditing() {
-       this.selectedMeal = null;
-     }
+   finishedEditing() {
+     this.selectedMeal = null;
+   }
 
-     addMeal(meal) {
-       this.newMealForm = false;
-       this.meals.push(meal);
-     }
+   addMeal(meal) {
+     this.newMealForm = false;
+     this.meals.push(meal);
+   }
 
-     showMealForm() {
-      this.newMealForm = true;
-    }
+   showMealForm() {
+    this.newMealForm = true;
+  }
 
   meals: Meal[] = [
     new Meal('Toast', 'breakfast', 75),
