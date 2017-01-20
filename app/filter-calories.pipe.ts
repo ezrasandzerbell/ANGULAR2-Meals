@@ -7,7 +7,7 @@ import { Meal } from './meal.model';
 })
 
 export class FilterCaloriesPipe implements PipeTransform {
-  transform(input: Meal[], query: string) {
+  transform(input: Meal[], query) {
     var output: Meal[] = [];
     if (query === "lowCal") {
       for (var i = 0; i < input.length; i++) {

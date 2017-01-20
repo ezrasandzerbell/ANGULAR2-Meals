@@ -5,9 +5,9 @@ import { Meal } from './meal.model';
   selector: 'meal-list',
   template: `
   <select (change)="onChange($event.target.value)">
-    <option [value]="allCal"> All Meals </option>
-    <option [value]="lowCal"> Low Calorie </option>
-    <option [value]="highCal"> High Calorie </option>
+    <option value="allCal" selected="selected"> All Meals </option>
+    <option value="lowCal"> Low Calorie </option>
+    <option value="highCal"> High Calorie </option>
   </select>
 
   <ul>
@@ -24,10 +24,12 @@ export class MealListComponent {
 
   onChange(selection) {
     this.calorieFilter = selection;
+    console.log(this.calorieFilter)
   }
 
   editMeal(clickedMeal) {
     this.editClickSender.emit(clickedMeal);
   }
+
 
 }
