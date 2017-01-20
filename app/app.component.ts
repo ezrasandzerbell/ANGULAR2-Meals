@@ -18,6 +18,7 @@ import { Meal } from './meal.model';
       <input [(ngModel)]="selectedMeal.calories"><br>
       <button (click)="finishedEditing()">Done</button>
     </div>
+    <new-meal [newMealForm]="newMealForm" (newMealSender)="addMeal($event)" (newMealFormSender)="showMealForm()"></new-meal>
   </div>
   `
 })
@@ -25,6 +26,7 @@ import { Meal } from './meal.model';
 export class AppComponent {
 
   selectedMeal: Meal = null;
+  newMealForm: boolean = false;
 
      editMeal(clickedMeal) {
        this.selectedMeal = clickedMeal;
@@ -34,6 +36,15 @@ export class AppComponent {
      finishedEditing() {
        this.selectedMeal = null;
      }
+
+     addMeal(meal) {
+       this.newMealForm = false;
+       this.meals.push(meal);
+     }
+
+     showMealForm() {
+      this.newMealForm = true;
+    }
 
   meals: Meal[] = [
     new Meal('Toast', 'breakfast', 75),
